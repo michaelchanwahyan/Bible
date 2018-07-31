@@ -71,7 +71,7 @@
 \Huge
 {%\nbtitlestretch
 \huge
-\textbf{聖經 --- 和合(CUV) 文理(WL) 信息(MSG) 呂振中(LZZ)\\ 英皇(KJV) 新譯(CNV) 新修訂標準(NRSV) 合本}}
+\textbf{聖經 --- 和合(CUV) 文理(WL) 呂振中(LZZ) 新譯(CNV)\\ 英皇(KJV) 新修訂標準(NRSV) 合本}}
 
 \nbvspace[1]
 
@@ -83,7 +83,7 @@ Editor: Michael\\
 \nbvspace[1]
 
 {\large
-Revision: \texttt{v1.0}\\
+Revision: \texttt{v1.1}\\
 Last Update: \today
 }
 
