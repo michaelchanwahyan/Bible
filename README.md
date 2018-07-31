@@ -32,7 +32,7 @@ and finally the output file "bible.pdf" should be ready.
 - KJV  (King James Version)
 - CNV  (Chinese New Version)
 - NRSV (New Revised Standard Version)
-- MSGV (The Message Bible by Eugene Peterson)
+- ~~MSGV (The Message Bible by Eugene Peterson)~~
 
 ## Editor
 contact person : Michael via chchan@link.cuhk.edu.hk
