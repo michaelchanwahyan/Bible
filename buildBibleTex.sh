@@ -1,4 +1,4 @@
-#!/bih/sh
+#!/bin/sh
 cd bible_out
 # 1st XeLaTex build, presuming
 # - failure in toc               if there does not have bible.toc
