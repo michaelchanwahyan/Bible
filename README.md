@@ -26,12 +26,13 @@ and finally the output file "bible.pdf" should be ready.
 //          the bible that greatly reduces the number of pages
 
 ## Current Bible Version Supported
-- CUV  (Chinese Union Version)
-- WL   (Wenli Version)
-- LZZ  (Lu Zhen Zhong Bible Translation)
+- CUV  (Chinese Union Version 和合本)
+- LZZ  (Lu Zhen Zhong Bible Translation 呂振中譯本)
 - KJV  (King James Version)
-- CNV  (Chinese New Version)
-- NRSV (New Revised Standard Version)
+- CUVR (Chinese Union Version Revised 和合本修定版)
+- CNV  (Chinese New Version 新譯本)
+- NRSV (New Revised Standard Version )
+- WL   (Wenli Version 文理本)
 - ~~MSGV (The Message Bible by Eugene Peterson)~~
 
 ## Editor
