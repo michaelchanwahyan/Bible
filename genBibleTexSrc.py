@@ -3,7 +3,7 @@ os.system("clear") ;
 os.system("cat bible_out/prefix   > bible_out/bible.tex") ;
 # ----------------------------------
 # the bible source includes
-# 1: cuv1; 2: wenli; 3: llz; 4: kjv; 5: cnv; 6: nrsv
+# 1: cuv1; 2: lzz; 3: kjv; 4: cuv2; 5: cnvv; 6: nrsv; 7: wenl
 # ----------------------------------
 fp_index    = open( "bibleIndex.txt"      , "r" )
 str_index   = fp_index.readlines()
@@ -28,6 +28,7 @@ for lines in str_index :
     fp_cuv1 = open( "bible_src/cuv1/"    + words[3] ) ; content_cuv1 = fp_cuv1.readlines() ; fp_cuv1.close()
     fp_lzzv = open( "bible_src/lzz/"     + words[3] ) ; content_lzzv = fp_lzzv.readlines() ; fp_lzzv.close()
     fp_kjvv = open( "bible_src/kjv/"     + words[3] ) ; content_kjvv = fp_kjvv.readlines() ; fp_kjvv.close()
+    fp_cuv2 = open( "bible_src/cuv2/"    + words[3] ) ; content_cuv2 = fp_cuv2.readlines() ; fp_cuv2.close()
     fp_cnvv = open( "bible_src/cnv/"     + words[3] ) ; content_cnvv = fp_cnvv.readlines() ; fp_cnvv.close()
     fp_nrsv = open( "bible_src/nrsv/"    + words[3] ) ; content_nrsv = fp_nrsv.readlines() ; fp_nrsv.close()
     fp_wenl = open( "bible_src/wenl/"    + words[3] ) ; content_wenl = fp_wenl.readlines() ; fp_wenl.close()
@@ -66,6 +67,13 @@ for lines in str_index :
     chapterNum  = int( content_kjvv[ sentenceNum - 1 ].split(".")[0] )
     print("kjvv "+words[3]+" contains "+str(chapterNum)+" chapters")
     # -------
+    # cuv2
+    # -------
+    sentenceNum = len( content_cuv2 )
+    print("sentence no. in cuv2 "+words[3]+" is "+str(sentenceNum))
+    chapterNum  = int( content_cuv2[ sentenceNum - 1 ].split(".")[0] )
+    print("cuv2 "+words[3]+" contains "+str(chapterNum)+" chapters")
+    # -------
     # cnvv
     # -------
     sentenceNum = len( content_cnvv )
@@ -97,23 +105,26 @@ for lines in str_index :
     # check sentenceNum per chapter
     # -----------------------------
     sentenceNumPerChapter = {}
-    colorIntensity        = 15
-    colorArr              =['red'           , \
-                            'gray'          , \
-                            'green'         , \
-                            'brown'         , \
-                            'blue'          , \
-                            'yellow'        ]
+    #colorIntensity        = 15
+    colorIntensity        = 100
+    colorArr              =['CUV1LightRed'   , \
+                            'LZZVLightGray'  , \
+                            'KJVVLightGreen' , \
+                            'CUV2LightYellow', \
+                            'CNVVLightBrown' , \
+                            'NRSVLightBlue'  , \
+                            'WENLLightPurple']
     for chapterIdx in range(1,chapterNum+1,1) :
         # <<<< when a new version is added, no. of "c" in tabular requires adjustment >>>>
         bibleStr = "\section{"+words[0]+" "+words[2]+" "+str(chapterIdx)+"}" \
-                   +" \hyperlink{toc}{[返主目錄]} \hyperref[subsec:book"+str(xbkCnt)+"]{[返卷目錄]}~\\begin{tabular}{cccccc}\\cellcolor{" \
-                   +colorArr[0]+"!"+str(colorIntensity)+"}CUV1&\\cellcolor{"     \
+                   +" \hyperlink{toc}{[返主目錄]} \hyperref[subsec:book"+str(xbkCnt)+"]{[返卷目錄]}~\\begin{tabular}{ccccccc}\\cellcolor{" \
+                   +colorArr[0]+"!"+str(colorIntensity)+"}CUV&\\cellcolor{"      \
                    +colorArr[1]+"!"+str(colorIntensity)+"}LZZ&\\cellcolor{"      \
                    +colorArr[2]+"!"+str(colorIntensity)+"}KJV&\\cellcolor{"      \
-                   +colorArr[3]+"!"+str(colorIntensity)+"}CNV&\\cellcolor{"      \
-                   +colorArr[4]+"!"+str(colorIntensity)+"}NRSV&\\cellcolor{"     \
-                   +colorArr[5]+"!"+str(colorIntensity)+"}WLV"                   \
+                   +colorArr[3]+"!"+str(colorIntensity)+"}CUVR&\\cellcolor{"     \
+                   +colorArr[4]+"!"+str(colorIntensity)+"}CNV&\\cellcolor{"      \
+                   +colorArr[5]+"!"+str(colorIntensity)+"}NRSV&\\cellcolor{"     \
+                   +colorArr[6]+"!"+str(colorIntensity)+"}WLV"                   \
                    +"\\end{tabular}"                                             \
                    +"\\label{sec:"+str(xrefCnt)+"}"                              \
                    +"\n"
@@ -129,7 +140,7 @@ for lines in str_index :
                 bibleStr = content_cuv1[sentenceIdx].replace("\n","")
                 bibleStr = bibleStr.split(" ",1)
                 # <<<< when a new version is added, argument in "multirow" requires adjustment >>>>
-                bibleStr1= "\\multirow{6}{*}{\\rotatebox[origin=c]{90}{\\hfill "+words[1]+" "+words[3]+" $"+bibleStr[0]+"$ \\hfill}}" ; fp.write( bibleStr1)
+                bibleStr1= "\\multirow{7}{*}{\\rotatebox[origin=c]{90}{\\hfill "+words[1]+" "+words[3]+" $"+bibleStr[0]+"$ \\hfill}}" ; fp.write( bibleStr1)
                 # ---------------------------------------------------
                 # add the content of cuv1 to 1st row
                 # ---------------------------------------------------
@@ -149,28 +160,36 @@ for lines in str_index :
                 bibleStr = bibleStr[1]
                 bibleStr = " & "+"\\cellcolor{"+colorArr[2]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n" ; fp.write( bibleStr ) ;
                 # ----------------------------------------------------
-                # add the content of cnvv to 4th row
+                # add the content of cuv2 to 4th row
+                # ----------------------------------------------------
+                bibleStr = content_cuv2[sentenceIdx].replace("\n","")
+                bibleStr = bibleStr.split(" ",1)
+                print(bibleStr)
+                bibleStr = bibleStr[1]
+                bibleStr = " & "+"\\cellcolor{"+colorArr[3]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n" ; fp.write( bibleStr )
+                # ----------------------------------------------------
+                # add the content of cnvv to 5th row
                 # ----------------------------------------------------
                 bibleStr = content_cnvv[sentenceIdx].replace("\n","")
                 bibleStr = bibleStr.split(" ",1)
                 bibleStr = bibleStr[1]
-                bibleStr = " & "+"\\cellcolor{"+colorArr[3]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n" ; fp.write( bibleStr )
+                bibleStr = " & "+"\\cellcolor{"+colorArr[4]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n" ; fp.write( bibleStr )
                 # ----------------------------------------------------
-                # add the content of nrsv to 5th row
+                # add the content of nrsv to 6th row
                 # ----------------------------------------------------
                 bibleStr = content_nrsv[sentenceIdx].replace("\n","")
                 bibleStr = bibleStr.split(" ",1)
                 bibleStr = bibleStr[1]
-                bibleStr = " & "+"\\cellcolor{"+colorArr[4]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n" ; fp.write( bibleStr )
+                bibleStr = " & "+"\\cellcolor{"+colorArr[5]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n" ; fp.write( bibleStr )
                 # ---------------------------------------------------
-                # add the content of wenl to 6th row
+                # add the content of wenl to 7th row
                 # ---------------------------------------------------
                 bibleStr = content_wenl[sentenceIdx].replace("\n","")
                 bibleStr1 = []
                 for c in bibleStr :
                     if ( not c.isdigit() ) and ( not c == "." ) :
                         bibleStr1.append(c)
-                bibleStr = " & "+"\\cellcolor{"+colorArr[5]+"!"+str(colorIntensity)+"}"+''.join(bibleStr1)+" \\\\\n" ; fp.write( bibleStr )
+                bibleStr = " & "+"\\cellcolor{"+colorArr[6]+"!"+str(colorIntensity)+"}"+''.join(bibleStr1)+" \\\\\n" ; fp.write( bibleStr )
                 # # ----------------------------------------------------
                 # # add the content of msgv to 7th row
                 # # ----------------------------------------------------
