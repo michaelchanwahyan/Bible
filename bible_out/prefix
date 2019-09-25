@@ -71,7 +71,10 @@
 \Huge
 {%\nbtitlestretch
 \huge
-\textbf{聖經 --- 和合(CUV) 文理(WL) 呂振中(LZZ) 新譯(CNV)\\ 英皇(KJV) 新修訂標準(NRSV) 合本}}
+\textbf{聖經 \\
+       和合(CUV) 和修(CUVR) 呂振中(LZZ) 新譯(CNV) \\
+       文理(WL) 英皇(KJV) 新修訂標準(NRSV) 合本\\
+       }}
 
 \nbvspace[1]
 
@@ -83,7 +86,7 @@ Editor: Michael\\
 \nbvspace[1]
 
 {\large
-Revision: \texttt{v1.2}\\
+Revision: \texttt{v1.3}\\
 Last Update: \today
 }
 
@@ -108,4 +111,19 @@ Last Update: \today
 \Large
 %\twocolumn
 
-\definecolor{pink}{rgb}{0.68,0,0.68}
+% the color definition syntax is as follow:
+% \definecolor{name}{system}{definition}
+% example: a mono-channel color can be defined as
+%          \definecolor{Gray}{gray}{0.9}
+% example: an rgb-3-channel color can be defined as
+%          \definecolor{LightCyan}{rgb}{0.88,1,1}
+%          \definecolor{pink}{rgb}{0.68,0,0.68}
+
+\definecolor{CUV1LightRed}{rgb}{1,0.75,0.75}     % for CUV1
+\definecolor{LZZVLightGray}{rgb}{0.9,0.9,0.9}    % for LZZ
+\definecolor{KJVVLightGreen}{rgb}{0.75,1,0.85}   % for KJV
+\definecolor{CUV2LightYellow}{rgb}{1,1,0.75}     % for CUV2
+\definecolor{CNVVLightBrown}{rgb}{1,0.85,0.7}    % for CNV
+\definecolor{NRSVLightBlue}{rgb}{0.75,1,1}       % for NRSV
+\definecolor{WENLLightPurple}{rgb}{0.95,0.85,0.9}% for WENL
+

@@ -25,13 +25,13 @@ for lines in str_index :
     # -------------------
     # open the four bible
     # -------------------
-    fp_cuv1 = open( "bible_src/cuv1/"    + words[3] ) ; content_cuv1 = fp_cuv1.readlines() ; fp_cuv1.close()
-    fp_lzzv = open( "bible_src/lzz/"     + words[3] ) ; content_lzzv = fp_lzzv.readlines() ; fp_lzzv.close()
-    fp_kjvv = open( "bible_src/kjv/"     + words[3] ) ; content_kjvv = fp_kjvv.readlines() ; fp_kjvv.close()
-    fp_cuv2 = open( "bible_src/cuv2/"    + words[3] ) ; content_cuv2 = fp_cuv2.readlines() ; fp_cuv2.close()
-    fp_cnvv = open( "bible_src/cnv/"     + words[3] ) ; content_cnvv = fp_cnvv.readlines() ; fp_cnvv.close()
-    fp_nrsv = open( "bible_src/nrsv/"    + words[3] ) ; content_nrsv = fp_nrsv.readlines() ; fp_nrsv.close()
-    fp_wenl = open( "bible_src/wenl/"    + words[3] ) ; content_wenl = fp_wenl.readlines() ; fp_wenl.close()
+    fp_cuv1 = open( "bible_src/cuv1/"    + words[3] + ".txt" ) ; content_cuv1 = fp_cuv1.readlines() ; fp_cuv1.close()
+    fp_lzzv = open( "bible_src/lzz/"     + words[3] + ".txt" ) ; content_lzzv = fp_lzzv.readlines() ; fp_lzzv.close()
+    fp_kjvv = open( "bible_src/kjv/"     + words[3] + ".txt" ) ; content_kjvv = fp_kjvv.readlines() ; fp_kjvv.close()
+    fp_cuv2 = open( "bible_src/cuv2/"    + words[3] + ".txt" ) ; content_cuv2 = fp_cuv2.readlines() ; fp_cuv2.close()
+    fp_cnvv = open( "bible_src/cnv/"     + words[3] + ".txt" ) ; content_cnvv = fp_cnvv.readlines() ; fp_cnvv.close()
+    fp_nrsv = open( "bible_src/nrsv/"    + words[3] + ".txt" ) ; content_nrsv = fp_nrsv.readlines() ; fp_nrsv.close()
+    fp_wenl = open( "bible_src/wenl/"    + words[3] + ".txt" ) ; content_wenl = fp_wenl.readlines() ; fp_wenl.close()
     # fp_msgv = open( "bible_src/msg/"     + words[3] ) ; content_msgv = fp_msgv.readlines() ; fp_msgv.close()
     # -----------------------------------------------------
     # [ GEN LATEX ] : create \chapter{} for current segment
