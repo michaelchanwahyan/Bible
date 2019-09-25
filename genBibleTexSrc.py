@@ -164,7 +164,6 @@ for lines in str_index :
                 # ----------------------------------------------------
                 bibleStr = content_cuv2[sentenceIdx].replace("\n","")
                 bibleStr = bibleStr.split(" ",1)
-                print(bibleStr)
                 bibleStr = bibleStr[1]
                 bibleStr = " & "+"\\cellcolor{"+colorArr[3]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n" ; fp.write( bibleStr )
                 # ----------------------------------------------------
