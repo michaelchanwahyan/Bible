@@ -32,7 +32,7 @@ for lines in str_index :
     fp_cnvv = open( "bible_src/cnv/"     + words[3] + ".txt" ) ; content_cnvv = fp_cnvv.readlines() ; fp_cnvv.close()
     fp_nrsv = open( "bible_src/nrsv/"    + words[3] + ".txt" ) ; content_nrsv = fp_nrsv.readlines() ; fp_nrsv.close()
     fp_wenl = open( "bible_src/wenl/"    + words[3] + ".txt" ) ; content_wenl = fp_wenl.readlines() ; fp_wenl.close()
-    # fp_msgv = open( "bible_src/msg/"     + words[3] ) ; content_msgv = fp_msgv.readlines() ; fp_msgv.close()
+    fp_msgv = open( "bible_src/msg/"     + words[3] + ".txt" ) ; content_msgv = fp_msgv.readlines() ; fp_msgv.close()
     # -----------------------------------------------------
     # [ GEN LATEX ] : create \chapter{} for current segment
     # -----------------------------------------------------
@@ -94,13 +94,13 @@ for lines in str_index :
     print("sentence no. in wenl "+words[3]+" is "+str(sentenceNum))
     chapterNum  = int( content_wenl[ sentenceNum - 1 ].split(".")[0] )
     print("wenl "+words[3]+" contains "+str(chapterNum)+" chapters")
-    # # -------
-    # # msgv
-    # # -------
-    # sentenceNum = len( content_msgv )
-    # print("sentence no. in msgv "+words[3]+" is "+str(sentenceNum))
-    # chapterNum  = int( content_msgv[ sentenceNum - 1 ].split(".")[0] )
-    # print("msgv "+words[3]+" contains "+str(chapterNum)+" chapters")
+    # -------
+    # msgv
+    # -------
+    sentenceNum = len( content_msgv )
+    print("sentence no. in msgv "+words[3]+" is "+str(sentenceNum))
+    chapterNum  = int( content_msgv[ sentenceNum - 1 ].split(".")[0] )
+    print("msgv "+words[3]+" contains "+str(chapterNum)+" chapters")
     # -----------------------------
     # check sentenceNum per chapter
     # -----------------------------
@@ -113,18 +113,20 @@ for lines in str_index :
                             'CUV2LightYellow', \
                             'CNVVLightBrown' , \
                             'NRSVLightBlue'  , \
-                            'WENLLightPurple']
+                            'WENLLightPurple', \
+                            'MSGVLightWhite']
     for chapterIdx in range(1,chapterNum+1,1) :
         # <<<< when a new version is added, no. of "c" in tabular requires adjustment >>>>
         bibleStr = "\section{"+words[0]+" "+words[2]+" "+str(chapterIdx)+"}" \
-                   +" \hyperlink{toc}{[返主目錄]} \hyperref[subsec:book"+str(xbkCnt)+"]{[返卷目錄]}~\\begin{tabular}{ccccccc}\\cellcolor{" \
+                   +" \hyperlink{toc}{[返主目錄]} \hyperref[subsec:book"+str(xbkCnt)+"]{[返卷目錄]}~\\begin{tabular}{cccccccc}\\cellcolor{" \
                    +colorArr[0]+"!"+str(colorIntensity)+"}CUV&\\cellcolor{"      \
                    +colorArr[1]+"!"+str(colorIntensity)+"}LZZ&\\cellcolor{"      \
                    +colorArr[2]+"!"+str(colorIntensity)+"}KJV&\\cellcolor{"      \
                    +colorArr[3]+"!"+str(colorIntensity)+"}CUVR&\\cellcolor{"     \
                    +colorArr[4]+"!"+str(colorIntensity)+"}CNV&\\cellcolor{"      \
                    +colorArr[5]+"!"+str(colorIntensity)+"}NRSV&\\cellcolor{"     \
-                   +colorArr[6]+"!"+str(colorIntensity)+"}WLV"                   \
+                   +colorArr[6]+"!"+str(colorIntensity)+"}WLV&\\cellcolor{"     \
+                   +colorArr[7]+"!"+str(colorIntensity)+"}MSGV"                   \
                    +"\\end{tabular}"                                             \
                    +"\\label{sec:"+str(xrefCnt)+"}"                              \
                    +"\n"
@@ -189,13 +191,13 @@ for lines in str_index :
                     if ( not c.isdigit() ) and ( not c == "." ) :
                         bibleStr1.append(c)
                 bibleStr = " & "+"\\cellcolor{"+colorArr[6]+"!"+str(colorIntensity)+"}"+''.join(bibleStr1)+" \\\\\n" ; fp.write( bibleStr )
-                # # ----------------------------------------------------
-                # # add the content of msgv to 7th row
-                # # ----------------------------------------------------
-                # bibleStr = content_msgv[sentenceIdx].replace("\n","")
-                # bibleStr = bibleStr.split(" ",1)
-                # bibleStr = bibleStr[1]
-                # bibleStr = " & "+"\\cellcolor{"+colorArr[6]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n" ; fp.write( bibleStr )
+                # ----------------------------------------------------
+                # add the content of msgv to 8th row
+                # ----------------------------------------------------
+                bibleStr = content_msgv[sentenceIdx].replace("\n","")
+                bibleStr = bibleStr.split(" ",1)
+                bibleStr = bibleStr[1]
+                bibleStr = " & "+"\\cellcolor{"+colorArr[7]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n" ; fp.write( bibleStr )
                 # ---------------------------------------------------
                 # end current sentence
                 # ---------------------------------------------------

@@ -70,10 +70,10 @@
 \nbvspace[1]
 \Huge
 {%\nbtitlestretch
-\huge
+\Large
 \textbf{聖經 \\
-       和合(CUV) 和修(CUVR) 呂振中(LZZ) 新譯(CNV) \\
-       文理(WL) 英皇(KJV) 新修訂標準(NRSV) 合本\\
+       和合(CUV) 和修(CUVR) 呂振中(LZZ) 新譯(CNV) 文理(WL) \\
+       英皇(KJV) 新修訂標準(NRSV) 信息(MSGV) 合本\\
        }}
 
 \nbvspace[1]
@@ -86,7 +86,7 @@ Editor: Michael\\
 \nbvspace[1]
 
 {\large
-Revision: \texttt{v1.5}\\
+Revision: \texttt{v1.6}\\
 Last Update: \today
 }
 
@@ -108,7 +108,7 @@ Last Update: \today
 \tableofcontents
 \end{multicols}
 
-\Large
+\large
 %\twocolumn
 
 % the color definition syntax is as follow:
@@ -126,4 +126,5 @@ Last Update: \today
 \definecolor{CNVVLightBrown}{rgb}{1,0.85,0.7}    % for CNV
 \definecolor{NRSVLightBlue}{rgb}{0.75,1,1}       % for NRSV
 \definecolor{WENLLightPurple}{rgb}{0.95,0.85,0.9}% for WENL
+\definecolor{MSGVLightWhite}{rgb}{0.98,0.98,0.98}% for MSGV
 
