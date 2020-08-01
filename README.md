@@ -33,7 +33,7 @@ and finally the output file "bible.pdf" should be ready.
 - CNV  (Chinese New Version 新譯本)
 - NRSV (New Revised Standard Version )
 - WL   (Wenli Version 文理本)
-- ~~MSGV (The Message Bible by Eugene Peterson)~~
+- MSGV (The Message Bible by Eugene Peterson)
 
 ## Editor
 contact person : Michael via chchan@link.cuhk.edu.hk
