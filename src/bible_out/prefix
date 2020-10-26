@@ -86,14 +86,14 @@ Editor: Michael\\
 \nbvspace[1]
 
 {\large
-Revision: \texttt{v1.7}\\
+Revision: \texttt{v1.8}\\
 Last Update: \today
 }
 
 
 \vfill
 \begin{tikzpicture}
-    \node (0,0) [opacity=0.03]{\includegraphics[width=15cm]{christ_on_cross.png}} ;
+    \node (0,0) [opacity=0.03]{\includegraphics[width=15cm]{../bible_out/christ_on_cross.png}} ;
 \end{tikzpicture}
 \vfill
 
@@ -127,4 +127,5 @@ Last Update: \today
 \definecolor{NRSVLightBlue}{rgb}{0.75,1,1}       % for NRSV
 \definecolor{WENLLightPurple}{rgb}{0.95,0.85,0.9}% for WENL
 \definecolor{MSGVLightWhite}{rgb}{0.98,0.98,0.98}% for MSGV
+\definecolor{NETSLightRed}{rgb}{1,0.75,0.75}     % for NETS
 
