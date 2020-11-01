@@ -31,9 +31,10 @@ and finally the output file "bible.pdf" should be ready.
 - KJV  (King James Version)
 - CUVR (Chinese Union Version Revised 和合本修定版)
 - CNV  (Chinese New Version 新譯本)
-- NRSV (New Revised Standard Version )
+- NRSV (New Revised Standard Version)
 - WL   (Wenli Version 文理本)
 - MSGV (The Message Bible by Eugene Peterson)
+- NETS (New English Translation of Septuagint)
 
 ## Editor
 contact person : Michael via chchan@link.cuhk.edu.hk
