@@ -25,6 +25,9 @@ and finally the output file "bible.pdf" should be ready.
 
 //          the bible that greatly reduces the number of pages
 
+// remark : as of 2021, ot and nt (Old and New Testament) are to be packed with
+original Hebrew and Greek from openly accessible original texts)
+
 ## Current Bible Version Supported
 - CUV  (Chinese Union Version 和合本)
 - LZZ  (Lu Zhen Zhong Bible Translation 呂振中譯本)
@@ -35,6 +38,7 @@ and finally the output file "bible.pdf" should be ready.
 - WL   (Wenli Version 文理本)
 - MSGV (The Message Bible by Eugene Peterson)
 - NETS (New English Translation of Septuagint)
+- SBLGNT (Society of Biblical Literature Greek New Testament)
 
 ## Editor
 contact person : Michael via chchan@link.cuhk.edu.hk
