@@ -144,6 +144,12 @@ for lines in str_index :
                 bibleStr = content_sblgnt[sentenceIdx].replace("\n","")
                 bibleStr = bibleStr.split(" ",1)
                 bibleStr = bibleStr[1]
+                bibleStr = bibleStr.replace("⸂","’")
+                bibleStr = bibleStr.replace("⸃","‘")
+                bibleStr = bibleStr.replace("⸀","「")
+                bibleStr = bibleStr.replace("⸁","「˙")
+                bibleStr = bibleStr.replace("⸄","’˙")
+                bibleStr = bibleStr.replace("⸅","˙‘")
                 bibleStr = " & "+"\\cellcolor{"+colorArr[4]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n" ; fp.write( bibleStr )
                 # ---------------------------------------------------
                 # end current sentence
