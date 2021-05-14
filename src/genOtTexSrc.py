@@ -29,7 +29,7 @@ for lines in str_index :
     fp_nrsv = open( "bible_src/nrsv/"    + words[3] + ".txt" ) ; content_nrsv = fp_nrsv.readlines() ; fp_nrsv.close()
     fp_cnvv = open( "bible_src/cnv/"     + words[3] + ".txt" ) ; content_cnvv = fp_cnvv.readlines() ; fp_cnvv.close()
     fp_lzzv = open( "bible_src/lzz/"     + words[3] + ".txt" ) ; content_lzzv = fp_lzzv.readlines() ; fp_lzzv.close()
-    fp_nets = open( "bible_src/nets/"    + words[3] + ".txt" ) ; content_nets = fp_nets.readlines() ; fp_nets.close()
+    #fp_nets = open( "bible_src/nets/"    + words[3] + ".txt" ) ; content_nets = fp_nets.readlines() ; fp_nets.close()
     # -----------------------------------------------------
     # [ GEN LATEX ] : create \chapter{} for current segment
     # -----------------------------------------------------
@@ -70,13 +70,13 @@ for lines in str_index :
     print("sentence no. in lzzv "+words[3]+" is "+str(sentenceNum))
     chapterNum  = int( content_lzzv[ sentenceNum - 1 ].split(".")[0] )
     print("lzzv "+words[3]+" contains "+str(chapterNum)+" chapters")
-    # -------
-    # nets
-    # -------
-    sentenceNum = len( content_nets )
-    print("sentence no. in nets "+words[3]+" is "+str(sentenceNum))
-    chapterNum  = int( content_nets[ sentenceNum - 1 ].split(".")[0] )
-    print("nets "+words[3]+" contains "+str(chapterNum)+" chapters")
+    ## -------
+    ## nets
+    ## -------
+    #sentenceNum = len( content_nets )
+    #print("sentence no. in nets "+words[3]+" is "+str(sentenceNum))
+    #chapterNum  = int( content_nets[ sentenceNum - 1 ].split(".")[0] )
+    #print("nets "+words[3]+" contains "+str(chapterNum)+" chapters")
     # -----------------------------
     # check sentenceNum per chapter
     # -----------------------------
@@ -86,17 +86,15 @@ for lines in str_index :
     colorArr              =['CUV2LightYellow', \
                             'NRSVLightBlue'  , \
                             'CNVVLightBrown' , \
-                            'LZZVLightGray'  , \
-                            'NETSLightRed']
+                            'LZZVLightGray']
     for chapterIdx in range(1,chapterNum+1,1) :
         # <<<< when a new version is added, no. of "c" in tabular requires adjustment >>>>
         bibleStr = "\section{"+words[0]+" "+words[2]+" "+str(chapterIdx)+"}" \
-                   +" \hyperlink{toc}{[返主目錄]} \hyperref[subsec:book"+str(xbkCnt)+"]{[返卷目錄]}~\\begin{tabular}{ccccc}\\cellcolor{" \
+                   +" \hyperlink{toc}{[返主目錄]} \hyperref[subsec:book"+str(xbkCnt)+"]{[返卷目錄]}~\\begin{tabular}{cccc}\\cellcolor{" \
                    +colorArr[0]+"!"+str(colorIntensity)+"}CUVR&\\cellcolor{"     \
                    +colorArr[1]+"!"+str(colorIntensity)+"}NRSV&\\cellcolor{"     \
                    +colorArr[2]+"!"+str(colorIntensity)+"}CNV&\\cellcolor{"      \
-                   +colorArr[3]+"!"+str(colorIntensity)+"}LZZ&\\cellcolor{"      \
-                   +colorArr[4]+"!"+str(colorIntensity)+"}NETS"                  \
+                   +colorArr[3]+"!"+str(colorIntensity)+"}LZZ"                  \
                    +"\\end{tabular}"                                             \
                    +"\\label{sec:"+str(xrefCnt)+"}"                              \
                    +"\n"
@@ -112,7 +110,7 @@ for lines in str_index :
                 bibleStr = content_cuv2[sentenceIdx].replace("\n","")
                 bibleStr = bibleStr.split(" ",1)
                 # <<<< when a new version is added, argument in "multirow" requires adjustment >>>>
-                bibleStr1= "\\multirow{5}{*}{\\rotatebox[origin=c]{90}{\\hfill "+words[1]+" "+words[3]+" $"+bibleStr[0]+"$ \\hfill}}" ; fp.write( bibleStr1)
+                bibleStr1= "\\multirow{4}{*}{\\rotatebox[origin=c]{90}{\\hfill "+words[1]+" "+words[3]+" $"+bibleStr[0]+"$ \\hfill}}" ; fp.write( bibleStr1)
                 # ---------------------------------------------------
                 # add the content of cuv2 to 1st row
                 # ---------------------------------------------------
@@ -138,13 +136,13 @@ for lines in str_index :
                 bibleStr = bibleStr.split(" ",1)
                 bibleStr = bibleStr[1]
                 bibleStr = " & "+"\\cellcolor{"+colorArr[3]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n" ; fp.write( bibleStr )
-                # ----------------------------------------------------
-                # add the content of nets to 5th row
-                # ----------------------------------------------------
-                bibleStr = content_nets[sentenceIdx].replace("\n","")
-                bibleStr = bibleStr.split(" ",1)
-                bibleStr = bibleStr[1]
-                bibleStr = " & "+"\\cellcolor{"+colorArr[4]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n" ; fp.write( bibleStr )
+                ## ----------------------------------------------------
+                ## add the content of nets to 5th row
+                ## ----------------------------------------------------
+                #bibleStr = content_nets[sentenceIdx].replace("\n","")
+                #bibleStr = bibleStr.split(" ",1)
+                #bibleStr = bibleStr[1]
+                #bibleStr = " & "+"\\cellcolor{"+colorArr[4]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n" ; fp.write( bibleStr )
                 # ---------------------------------------------------
                 # end current sentence
                 # ---------------------------------------------------
