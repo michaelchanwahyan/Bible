@@ -1,6 +1,6 @@
 import os
 os.system("clear") ;
-os.system("cat bible_out/prefix | sed 's/聖經/舊約聖經(希伯來順序)/' | sed 's/和合(CUV) 和修(CUVR) 呂振中(LZZ) 新譯(CNV) 文理(WL)/和修(CUVR) 呂振中(LZZ) 新譯(CNV)/' | sed 's/英皇(KJV) 新修訂標準(NRSV) 信息(MSGV)/新修訂標準(NRSV) 新英譯七十士(NETS)/'  > ot_out/ot.tex") ;
+os.system("cat bible_out/prefix | sed 's/聖經/舊約聖經(希伯來順序)/' | sed 's/和合(CUV) 和修(CUVR) 呂振中(LZZ) 新譯(CNV) 文理(WL)/和修(CUVR) 呂振中(LZZ) 新譯(CNV)/' | sed 's/英皇(KJV) 新修訂標準(NRSV) 信息(MSGV)/新修訂標準(NRSV)/'  > ot_out/ot.tex") ;
 # ----------------------------------
 # the bible source includes
 # 1: cuv1; 2: lzz; 3: kjv; 4: cuv2; 5: cnvv; 6: nrsv; 7: wenl
