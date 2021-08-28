@@ -1,6 +1,10 @@
 import os
 os.system("clear") ;
-os.system("cat bible_out/prefix | sed 's/聖經/舊約聖經(希伯來順序)/' | sed 's/和合(CUV) 和修(CUVR) 呂振中(LZZ) 新譯(CNV) 文理(WL)/和修(CUVR) 呂振中(LZZ) 新譯(CNV)/' | sed 's/英皇(KJV) 新修訂標準(NRSV) 信息(MSGV)/新修訂標準(NRSV)/'  > ot_out/ot.tex") ;
+os.system("cat bible_out/prefix | " + \
+          "sed 's/聖經/舊約聖經(希伯來順序)/' | " + \
+          "sed 's/和合(CUV) 和修(CUVR) 呂振中(LZZ) 新譯(CNV) 文理(WL)/和修(CUVR) 呂振中(LZZ) 新譯(CNV)/' | " + \
+          "sed 's/現中19(TCV19) 英皇(KJV) 新修訂標準(NRSV) 信息(MSGV)/現中19(TCV19) 新修訂標準(NRSV)/' " + \
+          " > ot_out/ot.tex") ;
 # ----------------------------------
 # the bible source includes
 # 1: cuv1; 2: lzz; 3: kjv; 4: cuv2; 5: cnvv; 6: nrsv; 7: wenl
@@ -29,7 +33,7 @@ for lines in str_index :
     fp_nrsv = open( "bible_src/nrsv/"    + words[3] + ".txt" ) ; content_nrsv = fp_nrsv.readlines() ; fp_nrsv.close()
     fp_cnvv = open( "bible_src/cnv/"     + words[3] + ".txt" ) ; content_cnvv = fp_cnvv.readlines() ; fp_cnvv.close()
     fp_lzzv = open( "bible_src/lzz/"     + words[3] + ".txt" ) ; content_lzzv = fp_lzzv.readlines() ; fp_lzzv.close()
-    #fp_nets = open( "bible_src/nets/"    + words[3] + ".txt" ) ; content_nets = fp_nets.readlines() ; fp_nets.close()
+    fp_tcv19= open( "bible_src/tcv19/"   + words[3] + ".txt" ) ; content_tcv19= fp_tcv19.readlines(); fp_tcv19.close()
     # -----------------------------------------------------
     # [ GEN LATEX ] : create \chapter{} for current segment
     # -----------------------------------------------------
@@ -70,13 +74,13 @@ for lines in str_index :
     print("sentence no. in lzzv "+words[3]+" is "+str(sentenceNum))
     chapterNum  = int( content_lzzv[ sentenceNum - 1 ].split(".")[0] )
     print("lzzv "+words[3]+" contains "+str(chapterNum)+" chapters")
-    ## -------
-    ## nets
-    ## -------
-    #sentenceNum = len( content_nets )
-    #print("sentence no. in nets "+words[3]+" is "+str(sentenceNum))
-    #chapterNum  = int( content_nets[ sentenceNum - 1 ].split(".")[0] )
-    #print("nets "+words[3]+" contains "+str(chapterNum)+" chapters")
+    # -------
+    # tcv19
+    # -------
+    sentenceNum = len( content_tcv19)
+    print("sentence no. in tcv19 "+words[3]+" is "+str(sentenceNum))
+    chapterNum  = int( content_tcv19[ sentenceNum - 1 ].split(".")[0] )
+    print("tcv19 "+words[3]+" contains "+str(chapterNum)+" chapters")
     # -----------------------------
     # check sentenceNum per chapter
     # -----------------------------
@@ -86,17 +90,19 @@ for lines in str_index :
     colorArr              =['CUV2LightYellow', \
                             'NRSVLightBlue'  , \
                             'CNVVLightBrown' , \
-                            'LZZVLightGray']
+                            'LZZVLightGray'  , \
+                            'TCV19PaleGreen']
     for chapterIdx in range(1,chapterNum+1,1) :
         # <<<< when a new version is added, no. of "c" in tabular requires adjustment >>>>
         bibleStr = "\section{"+words[0]+" "+words[2]+" "+str(chapterIdx)+"}" \
-                   +" \hyperlink{toc}{[返主目錄]} \hyperref[subsec:book"+str(xbkCnt)+"]{[返卷目錄]}~\\begin{tabular}{cccc}\\cellcolor{" \
-                   +colorArr[0]+"!"+str(colorIntensity)+"}CUVR&\\cellcolor{"     \
-                   +colorArr[1]+"!"+str(colorIntensity)+"}NRSV&\\cellcolor{"     \
-                   +colorArr[2]+"!"+str(colorIntensity)+"}CNV&\\cellcolor{"      \
-                   +colorArr[3]+"!"+str(colorIntensity)+"}LZZ"                  \
-                   +"\\end{tabular}"                                             \
-                   +"\\label{sec:"+str(xrefCnt)+"}"                              \
+                   +" \hyperlink{toc}{[返主目錄]} \hyperref[subsec:book"+str(xbkCnt)+"]{[返卷目錄]}~\\begin{tabular}{ccccc}\\cellcolor{" \
+                   +colorArr[0]+"!"+str(colorIntensity)+"}CUVR&\\cellcolor{" \
+                   +colorArr[1]+"!"+str(colorIntensity)+"}NRSV&\\cellcolor{" \
+                   +colorArr[2]+"!"+str(colorIntensity)+"}CNV&\\cellcolor{"  \
+                   +colorArr[3]+"!"+str(colorIntensity)+"}LZZ&\\cellcolor{"  \
+                   +colorArr[4]+"!"+str(colorIntensity)+"}TCV2019"           \
+                   +"\\end{tabular}"                                         \
+                   +"\\label{sec:"+str(xrefCnt)+"}"                          \
                    +"\n"
         fp.write( bibleStr )
         fp.write( "\\newline\n" )
@@ -136,13 +142,13 @@ for lines in str_index :
                 bibleStr = bibleStr.split(" ",1)
                 bibleStr = bibleStr[1]
                 bibleStr = " & "+"\\cellcolor{"+colorArr[3]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n" ; fp.write( bibleStr )
-                ## ----------------------------------------------------
-                ## add the content of nets to 5th row
-                ## ----------------------------------------------------
-                #bibleStr = content_nets[sentenceIdx].replace("\n","")
-                #bibleStr = bibleStr.split(" ",1)
-                #bibleStr = bibleStr[1]
-                #bibleStr = " & "+"\\cellcolor{"+colorArr[4]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n" ; fp.write( bibleStr )
+                # ----------------------------------------------------
+                # add the content of tcv19 to 5th row
+                # ----------------------------------------------------
+                bibleStr = content_tcv19[sentenceIdx].replace("\n","")
+                bibleStr = bibleStr.split(" ",1)
+                bibleStr = bibleStr[1]
+                bibleStr = " & "+"\\cellcolor{"+colorArr[4]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n" ; fp.write( bibleStr )
                 # ---------------------------------------------------
                 # end current sentence
                 # ---------------------------------------------------

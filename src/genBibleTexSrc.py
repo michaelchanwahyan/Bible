@@ -128,17 +128,17 @@ for lines in str_index :
         # <<<< when a new version is added, no. of "c" in tabular requires adjustment >>>>
         bibleStr = "\section{"+words[0]+" "+words[2]+" "+str(chapterIdx)+"}" \
                    +" \hyperlink{toc}{[返主目錄]} \hyperref[subsec:book"+str(xbkCnt)+"]{[返卷目錄]}~\\begin{tabular}{ccccccccc}\\cellcolor{" \
-                   +colorArr[0]+"!"+str(colorIntensity)+"}CUV&\\cellcolor{"      \
-                   +colorArr[1]+"!"+str(colorIntensity)+"}LZZ&\\cellcolor{"      \
-                   +colorArr[2]+"!"+str(colorIntensity)+"}KJV&\\cellcolor{"      \
-                   +colorArr[3]+"!"+str(colorIntensity)+"}CUVR&\\cellcolor{"     \
-                   +colorArr[4]+"!"+str(colorIntensity)+"}CNV&\\cellcolor{"      \
-                   +colorArr[5]+"!"+str(colorIntensity)+"}NRSV&\\cellcolor{"     \
+                   +colorArr[0]+"!"+str(colorIntensity)+"}CUV&\\cellcolor{"     \
+                   +colorArr[1]+"!"+str(colorIntensity)+"}LZZ&\\cellcolor{"     \
+                   +colorArr[2]+"!"+str(colorIntensity)+"}KJV&\\cellcolor{"     \
+                   +colorArr[3]+"!"+str(colorIntensity)+"}CUVR&\\cellcolor{"    \
+                   +colorArr[4]+"!"+str(colorIntensity)+"}CNV&\\cellcolor{"     \
+                   +colorArr[5]+"!"+str(colorIntensity)+"}NRSV&\\cellcolor{"    \
                    +colorArr[6]+"!"+str(colorIntensity)+"}WLV&\\cellcolor{"     \
-                   +colorArr[7]+"!"+str(colorIntensity)+"}TCV19&\\cellcolor{"     \
-                   +colorArr[8]+"!"+str(colorIntensity)+"}MSGV"                   \
-                   +"\\end{tabular}"                                             \
-                   +"\\label{sec:"+str(xrefCnt)+"}"                              \
+                   +colorArr[7]+"!"+str(colorIntensity)+"}TCV2019&\\cellcolor{" \
+                   +colorArr[8]+"!"+str(colorIntensity)+"}MSGV"                 \
+                   +"\\end{tabular}"                                            \
+                   +"\\label{sec:"+str(xrefCnt)+"}"                             \
                    +"\n"
         fp.write( bibleStr )
         fp.write( "\\newline\n" )
