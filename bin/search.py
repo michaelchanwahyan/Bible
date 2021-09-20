@@ -7,7 +7,6 @@ for l in lines:
     for l_ in l.strip().split(' '):
         ls.append(l_)
 
-bibleversion = ls[0]
 booklist = ["Gen","Exo","Lev","Num","Deu",
         "Jos","Jug","Rut","1Sa","2Sa","1Ki","2Ki",
         "1Ch","2Ch","Ezr","Neh",
@@ -20,13 +19,17 @@ booklist = ["Gen","Exo","Lev","Num","Deu",
         "Col","1Ts","2Ts","1Ti","2Ti","Tit","Phm",
         "Heb","Jas","1Pe","2Pe",
         "1Jn","2Jn","3Jn","Jud","Rev"]
-keywordNum = len(ls) - 1
+#if bibleversion == 'sblgnt':
+#    booklist = booklist[39:]
+keywordNum = len(ls)
 for book in booklist:
-    print(book)
-    fullbookpath = "../src/bible_src/" + bibleversion + "/" + book + ".txt"
-    with open(fullbookpath, "r") as fp:
-        lines = fp.readlines()
-    for line in lines:
-        line = line.strip()
-        if all(keyword in line for keyword in ls[1:]):
-            print("    " + line)
+    for bibleversion in ['cuv1', 'cuv2', 'cnv', 'lzz', 'tcv19', 'wenl', 'nrsv', 'kjv', 'nets']:
+        fullbookpath = "../src/bible_src/" + bibleversion + "/" + book + ".txt"
+        with open(fullbookpath, "r") as fp:
+            lines = fp.readlines()
+        for line in lines:
+            line = line.strip()
+            if all(keyword in line for keyword in ls):
+                print(book + "  " + bibleversion)
+                print("    " + line)
+
