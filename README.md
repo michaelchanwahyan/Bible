@@ -39,6 +39,7 @@ original Hebrew and Greek from openly accessible original texts)
 - MSGV (The Message Bible by Eugene Peterson)
 - NETS (New English Translation of Septuagint)
 - SBLGNT (Society of Biblical Literature Greek New Testament)
+- JPSV1917 (Tanakh 1917 edition according to the Masoretic Text, Jewish Publication Society)
 - TCV2019 (Today's Chinese Version 2019 現代中文譯本2019)
 
 ## Editor
