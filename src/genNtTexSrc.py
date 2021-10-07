@@ -24,6 +24,10 @@ fp.close()
 fp = open( "nt_out/nt.tex" , "a" )
 for ntBook in nt_index :
     xbkCnt += 1
+    if xbkCnt == 1:
+        fp.write("\\part{$\mathcal{NT}$ Gospel}\n")
+    if xbkCnt == 5:
+        fp.write("\\part{$\mathcal{NT}$ Narrative and Epistles}\n")
     words = ntBook.strip().split()
     # -------------------------------------------------------------------
     # words[0] words[1] words[2] words[3] Chi title abrev Eng title abrev

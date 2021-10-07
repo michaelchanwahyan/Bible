@@ -6,6 +6,7 @@
 \usepackage{minitoc}
 \setcounter{minitocdepth}{1}
 \setlength{\mtcindent}{24pt}
+\setcounter{secnumdepth}{-2}
 %\renewcommand{\mtcfont}{\small\rm}
 %\renewcommand{\mtcSfont}{\small\bf}
 %\usepackage{setspace}
