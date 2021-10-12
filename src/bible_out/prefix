@@ -24,6 +24,7 @@
 \usepackage{xeCJK}
 \setmainfont{Times}
 \setCJKmainfont{BiauKai}
+\newfontfamily\sblgood{SBL BibLit}[Script=Hebrew,Contextuals=Alternate]
 
 \usepackage{ifpdf,cite,algorithmic,url,tikz}
 \usepackage[cmex10]{amsmath}
