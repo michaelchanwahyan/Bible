@@ -25,11 +25,11 @@ fp = open( "ot_out/ot.tex" , "a" )
 for otBook in ot_index :
     xbkCnt += 1
     if xbkCnt == 1:
-        fp.write("\\part{$\mathcal{OT}$ Torah}\n")
+        fp.write("\\part{$\\mathcal{OT}$ Torah}\n")
     if xbkCnt == 6:
-        fp.write("\\part{$\mathcal{OT}$ Neviim}\n")
+        fp.write("\\part{$\\mathcal{OT}$ Neviim}\n")
     if xbkCnt == 27:
-        fp.write("\\part{$\mathcal{OT}$ Ketuvim}\n")
+        fp.write("\\part{$\\mathcal{OT}$ Ketuvim}\n")
     words = otBook.strip().split()
     # -------------------------------------------------------------------
     # words[0] words[1] words[2] words[3] Chi title abrev Eng title abrev
