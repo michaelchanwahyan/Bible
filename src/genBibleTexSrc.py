@@ -25,14 +25,6 @@ for otBook in ot_index :
         fp.write("\\part{$\\mathcal{OT}$ Neviim}\n")
     if xbkCnt == 27:
         fp.write("\\part{$\\mathcal{OT}$ Ketuvim}\n")
-    if xbkCnt == 40:
-        fp.write("\\part{$\\mathcal{NT}$ Gospel}\n")
-    if xbkCnt == 44:
-        fp.write("\\part{$\\mathcal{NT}$ Narrative}\n")
-    if xbkCnt == 45:
-        fp.write("\\part{$\\mathcal{NT}$ Epistles}\n")
-    if xbkCnt == 66:
-        fp.write("\\part{$\\mathcal{NT}$ Apocalypse}\n")
     words = otBook.strip().split()
     # -------------------------------------------------------------------
     # words[0] words[1] words[2] words[3] Chi title abrev Eng title abrev
@@ -272,6 +264,14 @@ fp.close()
 fp = open( "bible_out/bible.tex" , "a" )
 for ntBook in nt_index :
     xbkCnt += 1
+    if xbkCnt == 40:
+        fp.write("\\part{$\\mathcal{NT}$ Gospel}\n")
+    if xbkCnt == 44:
+        fp.write("\\part{$\\mathcal{NT}$ Narrative}\n")
+    if xbkCnt == 45:
+        fp.write("\\part{$\\mathcal{NT}$ Epistles}\n")
+    if xbkCnt == 66:
+        fp.write("\\part{$\\mathcal{NT}$ Apocalypse}\n")
     words = ntBook.strip().split()
     # -------------------------------------------------------------------
     # words[0] words[1] words[2] words[3] Chi title abrev Eng title abrev
