@@ -245,12 +245,13 @@ for ntBook in nt_index :
                 bibleStr = content_sblgnt[sentenceIdx].replace("\n","")
                 bibleStr = bibleStr.split(" ",1)
                 bibleStr = bibleStr[1]
-                bibleStr = bibleStr.replace("⸂","’")
-                bibleStr = bibleStr.replace("⸃","‘")
-                bibleStr = bibleStr.replace("⸀","「")
-                bibleStr = bibleStr.replace("⸁","「˙")
-                bibleStr = bibleStr.replace("⸄","’˙")
-                bibleStr = bibleStr.replace("⸅","˙‘")
+                #bibleStr = bibleStr.replace("⸂","’")
+                #bibleStr = bibleStr.replace("⸃","‘")
+                #bibleStr = bibleStr.replace("⸀","「")
+                #bibleStr = bibleStr.replace("⸁","「˙")
+                #bibleStr = bibleStr.replace("⸄","’˙")
+                #bibleStr = bibleStr.replace("⸅","˙‘")
+                bibleStr = "\\sblgoodgreek " + bibleStr
                 bibleStr = " & "+"\\cellcolor{"+colorArr[9]+"!"+str(colorIntensity)+"}"+"\\scriptsize{希臘原文}"+" & "+"\\cellcolor{"+colorArr[9]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n" ; fp.write( bibleStr )
                 # ---------------------------------------------------
                 # end current sentence
