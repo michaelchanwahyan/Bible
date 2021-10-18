@@ -24,7 +24,7 @@
 \usepackage{xeCJK}
 \setmainfont{Times}
 \setCJKmainfont{BiauKai}
-\newfontfamily\sblgood{SBL BibLit}[Script=Hebrew,Contextuals=Alternate]
+\newfontfamily\sblgoodhebrew{SBL BibLit}[Script=Hebrew,Contextuals=Alternate]
 \newfontfamily\sblgoodgreek{SBL BibLit}[Script=Greek,Contextuals=Alternate]
 
 \usepackage{ifpdf,cite,algorithmic,url,tikz}
@@ -97,7 +97,7 @@ Editor: Michael\\
 \nbvspace[1]
 
 {\large
-Revision: \texttt{v1.11}\\
+Revision: \texttt{v1.12}\\
 Last Update: \today
 }
 

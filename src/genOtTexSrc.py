@@ -7,7 +7,8 @@ os.system("cat bible_out/prefix   > ot_out/ot.tex") ;
 
 os.system("cat bible_out/prefix | " + \
         "sed 's/聖經/舊約聖經/' | " + \
-        "sed 's/希臘文(SBLGNT) //'" + \
+        "sed 's/希臘文(SBLGNT) //' | " + \
+        "sed 's/christ_on_cross/ot_frontcover/'" + \
         " > ot_out/ot.tex") ;
 
 # Generate Bible TOC
@@ -243,18 +244,18 @@ for otBook in ot_index :
                 bibleStr = content_jpsv[sentenceIdx].replace("\n","")
                 bibleStr = bibleStr.split(" ",1)
                 bibleStr = bibleStr[1]
-                bibleStr = " ".join(
+                bibleStr_hebrew = " ".join(
                                 "    ".join(
-                                          bibleStr.split("    ")[0:-1])\
-                                      .replace("}פ{","\{ פ \}")\
-                                      .replace("}ס{","\{ ס \}")\
-                                      .replace("}ש{","\{ ש \}")\
-                                      .replace("}ר{","\{ ר \}") \
-                                      .split(" ")[::-1]) \
-                           + " " + bibleStr.split("    ")[-1]\
-                                           .replace("{P}","\{ P \}")\
-                                           .replace("{S}","\{ S \}")
-                bibleStr = "\\sblgood " + bibleStr
+                                    bibleStr.split("    ")[0:-1])\
+                                        .replace("{פ}","\{ פ \}")\
+                                        .replace("{ס}","\{ ס \}")\
+                                        .replace("{ש}","\{ ש \}")\
+                                        .replace("{ר}","\{ ר \}") \
+                                        .split(" ")[::-1])
+                bibleStr_english = bibleStr.split("    ")[-1]\
+                                       .replace("{P}","\{ P \}")\
+                                       .replace("{S}","\{ S \}")
+                bibleStr = "{\\sblgoodhebrew " + bibleStr_hebrew + " } " + bibleStr_english
                 bibleStr = " & "+"\\cellcolor{"+colorArr[9]+"!"+str(colorIntensity)+"}"+"\\scriptsize{\\makecell{Masoretic \\\\ JPSV1917}}"+" & "+"\\cellcolor{"+colorArr[9]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n" ; fp.write( bibleStr )
                 # ---------------------------------------------------
                 # end current sentence

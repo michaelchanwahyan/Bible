@@ -238,18 +238,18 @@ for otBook in ot_index :
                 bibleStr = content_jpsv[sentenceIdx].replace("\n","")
                 bibleStr = bibleStr.split(" ",1)
                 bibleStr = bibleStr[1]
-                bibleStr = " ".join(
+                bibleStr_hebrew = " ".join(
                                 "    ".join(
-                                          bibleStr.split("    ")[0:-1])\
-                                      .replace("}פ{","\{ פ \}")\
-                                      .replace("}ס{","\{ ס \}")\
-                                      .replace("}ש{","\{ ש \}")\
-                                      .replace("}ר{","\{ ר \}") \
-                                      .split(" ")[::-1]) \
-                           + " " + bibleStr.split("    ")[-1]\
-                                           .replace("{P}","\{ P \}")\
-                                           .replace("{S}","\{ S \}")
-                bibleStr = "\\sblgood " + bibleStr
+                                    bibleStr.split("    ")[0:-1])\
+                                        .replace("{פ}","\{ פ \}")\
+                                        .replace("{ס}","\{ ס \}")\
+                                        .replace("{ש}","\{ ש \}")\
+                                        .replace("{ר}","\{ ר \}") \
+                                        .split(" ")[::-1])
+                bibleStr_english = bibleStr.split("    ")[-1]\
+                                       .replace("{P}","\{ P \}")\
+                                       .replace("{S}","\{ S \}")
+                bibleStr = "{\\sblgoodhebrew " + bibleStr_hebrew + " } " + bibleStr_english
                 bibleStr = " & "+"\\cellcolor{"+colorArr[9]+"!"+str(colorIntensity)+"}"+"\\scriptsize{\\makecell{Masoretic \\\\ JPSV1917}}"+" & "+"\\cellcolor{"+colorArr[9]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n" ; fp.write( bibleStr )
                 # ---------------------------------------------------
                 # end current sentence
