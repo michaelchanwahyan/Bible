@@ -3,7 +3,9 @@ import os
 os.system("clear")
 
 # Generate Front Page
-os.system("cat bible_out/prefix   > bible_out/bible.tex") ;
+os.system("cat bible_out/prefix | " + \
+        "sed 's/%remove comment for Bible cover%//'" + \
+        " > bible_out/bible.tex") ;
 
 # Generate Bible TOC
 

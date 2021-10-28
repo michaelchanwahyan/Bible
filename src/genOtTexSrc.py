@@ -8,7 +8,7 @@ os.system("cat bible_out/prefix   > ot_out/ot.tex") ;
 os.system("cat bible_out/prefix | " + \
         "sed 's/聖經/舊約聖經/' | " + \
         "sed 's/希臘文(SBLGNT) //' | " + \
-        "sed 's/christ_on_cross/ot_frontcover/'" + \
+        "sed 's/%remove comment for OT cover%//'" + \
         " > ot_out/ot.tex") ;
 
 # Generate Bible TOC

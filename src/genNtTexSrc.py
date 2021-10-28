@@ -8,6 +8,7 @@ os.system("cat bible_out/prefix   > nt_out/nt.tex") ;
 os.system("cat bible_out/prefix | " + \
         "sed 's/聖經/新約聖經/' | " + \
         "sed 's/馬索拉(JPS1917) //'" + \
+        "sed 's/%remove comment for NT cover%//'" + \
         " > nt_out/nt.tex") ;
 
 # Generate Bible TOC
