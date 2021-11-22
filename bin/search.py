@@ -1,4 +1,4 @@
-#!/bin/python3
+#!/usr/bin/python3
 import os
 with open("input.txt", "r") as fp:
     lines = fp.readlines()
