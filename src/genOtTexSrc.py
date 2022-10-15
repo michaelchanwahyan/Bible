@@ -3,9 +3,7 @@ import os
 os.system("clear")
 
 # Generate Front Page
-os.system("cat bible_out/prefix   > ot_out/ot.tex") ;
-
-os.system("cat bible_out/prefix | " + \
+os.system("cat bible_out/prefix.tex | " + \
         "sed 's/聖經/舊約聖經/' | " + \
         "sed 's/希臘文(SBLGNT) //' | " + \
         "sed 's/%remove comment for OT cover%//'" + \
@@ -264,4 +262,4 @@ for otBook in ot_index :
                 bibleStr = "\end{tabularx}\n"                         ; fp.write( bibleStr )
 fp.close()
 os.system("cat bible_out/afterword >> ot_out/ot.tex")
-os.system("cat bible_out/postfix >> ot_out/ot.tex")
+os.system("cat bible_out/postfix.tex >> ot_out/ot.tex")

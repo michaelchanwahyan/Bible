@@ -3,7 +3,7 @@ import os
 os.system("clear")
 
 # Generate Front Page
-os.system("cat bible_out/prefix | " + \
+os.system("cat bible_out/prefix.tex | " + \
         "sed 's/%remove comment for Bible cover%//'" + \
         " > bible_out/bible.tex") ;
 
@@ -501,4 +501,4 @@ for ntBook in nt_index :
                 bibleStr = "\end{tabularx}\n"                         ; fp.write( bibleStr )
 fp.close()
 os.system("cat bible_out/afterword >> bible_out/bible.tex")
-os.system("cat bible_out/postfix >> bible_out/bible.tex")
+os.system("cat bible_out/postfix.tex >> bible_out/bible.tex")
