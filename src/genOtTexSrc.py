@@ -296,5 +296,5 @@ for otBook in ot_index :
                 bibleStr = "\hline\n"                                 ; fp.write( bibleStr )
                 bibleStr = "\end{tabularx}\n"                         ; fp.write( bibleStr )
 fp.close()
-os.system("cat bible_out/afterword >> ot_out/ot.tex")
+os.system("cat bible_out/afterword.tex >> ot_out/ot.tex")
 os.system("cat bible_out/postfix.tex >> ot_out/ot.tex")

@@ -312,5 +312,5 @@ for ntBook in nt_index :
                 bibleStr = "\hline\n"                                 ; fp.write( bibleStr )
                 bibleStr = "\end{tabularx}\n"                         ; fp.write( bibleStr )
 fp.close()
-os.system("cat bible_out/afterword >> nt_out/nt.tex")
+os.system("cat bible_out/afterword.tex >> nt_out/nt.tex")
 os.system("cat bible_out/postfix.tex >> nt_out/nt.tex")
