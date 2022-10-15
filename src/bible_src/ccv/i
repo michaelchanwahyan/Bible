@@ -1,0 +1,29 @@
+word_from=稭
+word_to=秸
+echo 1Co.txt ; mv  1Co.txt  1Co2.txt ; sleep 0.2 ;  cat 1Co2.txt  | sed s/$word_from/$word_to/g > 1Co.txt ; rm -f  1Co2.txt
+echo 1Jn.txt ; mv  1Jn.txt  1Jn2.txt ; sleep 0.2 ;  cat 1Jn2.txt  | sed s/$word_from/$word_to/g > 1Jn.txt ; rm -f  1Jn2.txt
+echo 1Pe.txt ; mv  1Pe.txt  1Pe2.txt ; sleep 0.2 ;  cat 1Pe2.txt  | sed s/$word_from/$word_to/g > 1Pe.txt ; rm -f  1Pe2.txt
+echo 1Ti.txt ; mv  1Ti.txt  1Ti2.txt ; sleep 0.2 ;  cat 1Ti2.txt  | sed s/$word_from/$word_to/g > 1Ti.txt ; rm -f  1Ti2.txt
+echo 1Ts.txt ; mv  1Ts.txt  1Ts2.txt ; sleep 0.2 ;  cat 1Ts2.txt  | sed s/$word_from/$word_to/g > 1Ts.txt ; rm -f  1Ts2.txt
+echo 2Co.txt ; mv  2Co.txt  2Co2.txt ; sleep 0.2 ;  cat 2Co2.txt  | sed s/$word_from/$word_to/g > 2Co.txt ; rm -f  2Co2.txt
+echo 2Jn.txt ; mv  2Jn.txt  2Jn2.txt ; sleep 0.2 ;  cat 2Jn2.txt  | sed s/$word_from/$word_to/g > 2Jn.txt ; rm -f  2Jn2.txt
+echo 2Pe.txt ; mv  2Pe.txt  2Pe2.txt ; sleep 0.2 ;  cat 2Pe2.txt  | sed s/$word_from/$word_to/g > 2Pe.txt ; rm -f  2Pe2.txt
+echo 2Ti.txt ; mv  2Ti.txt  2Ti2.txt ; sleep 0.2 ;  cat 2Ti2.txt  | sed s/$word_from/$word_to/g > 2Ti.txt ; rm -f  2Ti2.txt
+echo 2Ts.txt ; mv  2Ts.txt  2Ts2.txt ; sleep 0.2 ;  cat 2Ts2.txt  | sed s/$word_from/$word_to/g > 2Ts.txt ; rm -f  2Ts2.txt
+echo 3Jn.txt ; mv  3Jn.txt  3Jn2.txt ; sleep 0.2 ;  cat 3Jn2.txt  | sed s/$word_from/$word_to/g > 3Jn.txt ; rm -f  3Jn2.txt
+echo Act.txt ; mv  Act.txt  Act2.txt ; sleep 0.2 ;  cat Act2.txt  | sed s/$word_from/$word_to/g > Act.txt ; rm -f  Act2.txt
+echo Col.txt ; mv  Col.txt  Col2.txt ; sleep 0.2 ;  cat Col2.txt  | sed s/$word_from/$word_to/g > Col.txt ; rm -f  Col2.txt
+echo Eph.txt ; mv  Eph.txt  Eph2.txt ; sleep 0.2 ;  cat Eph2.txt  | sed s/$word_from/$word_to/g > Eph.txt ; rm -f  Eph2.txt
+echo Gal.txt ; mv  Gal.txt  Gal2.txt ; sleep 0.2 ;  cat Gal2.txt  | sed s/$word_from/$word_to/g > Gal.txt ; rm -f  Gal2.txt
+echo Heb.txt ; mv  Heb.txt  Heb2.txt ; sleep 0.2 ;  cat Heb2.txt  | sed s/$word_from/$word_to/g > Heb.txt ; rm -f  Heb2.txt
+echo Jas.txt ; mv  Jas.txt  Jas2.txt ; sleep 0.2 ;  cat Jas2.txt  | sed s/$word_from/$word_to/g > Jas.txt ; rm -f  Jas2.txt
+echo Jhn.txt ; mv  Jhn.txt  Jhn2.txt ; sleep 0.2 ;  cat Jhn2.txt  | sed s/$word_from/$word_to/g > Jhn.txt ; rm -f  Jhn2.txt
+echo Jud.txt ; mv  Jud.txt  Jud2.txt ; sleep 0.2 ;  cat Jud2.txt  | sed s/$word_from/$word_to/g > Jud.txt ; rm -f  Jud2.txt
+echo Luk.txt ; mv  Luk.txt  Luk2.txt ; sleep 0.2 ;  cat Luk2.txt  | sed s/$word_from/$word_to/g > Luk.txt ; rm -f  Luk2.txt
+echo Mak.txt ; mv  Mak.txt  Mak2.txt ; sleep 0.2 ;  cat Mak2.txt  | sed s/$word_from/$word_to/g > Mak.txt ; rm -f  Mak2.txt
+echo Mat.txt ; mv  Mat.txt  Mat2.txt ; sleep 0.2 ;  cat Mat2.txt  | sed s/$word_from/$word_to/g > Mat.txt ; rm -f  Mat2.txt
+echo Phl.txt ; mv  Phl.txt  Phl2.txt ; sleep 0.2 ;  cat Phl2.txt  | sed s/$word_from/$word_to/g > Phl.txt ; rm -f  Phl2.txt
+echo Phm.txt ; mv  Phm.txt  Phm2.txt ; sleep 0.2 ;  cat Phm2.txt  | sed s/$word_from/$word_to/g > Phm.txt ; rm -f  Phm2.txt
+echo Rev.txt ; mv  Rev.txt  Rev2.txt ; sleep 0.2 ;  cat Rev2.txt  | sed s/$word_from/$word_to/g > Rev.txt ; rm -f  Rev2.txt
+echo Rom.txt ; mv  Rom.txt  Rom2.txt ; sleep 0.2 ;  cat Rom2.txt  | sed s/$word_from/$word_to/g > Rom.txt ; rm -f  Rom2.txt
+echo Tit.txt ; mv  Tit.txt  Tit2.txt ; sleep 0.2 ;  cat Tit2.txt  | sed s/$word_from/$word_to/g > Tit.txt ; rm -f  Tit2.txt
