@@ -318,6 +318,7 @@ for ntBook in nt_index :
     # -------------------
     # open the bible in different versions
     # -------------------
+    fp_ccvv = open( "bible_src/ccv/"     + words[3] + ".txt" ) ; content_ccvv = fp_ccvv.readlines() ; fp_ccvv.close()
     fp_cuv1 = open( "bible_src/cuv1/"    + words[3] + ".txt" ) ; content_cuv1 = fp_cuv1.readlines() ; fp_cuv1.close()
     fp_lzzv = open( "bible_src/lzz/"     + words[3] + ".txt" ) ; content_lzzv = fp_lzzv.readlines() ; fp_lzzv.close()
     fp_kjvv = open( "bible_src/kjv/"     + words[3] + ".txt" ) ; content_kjvv = fp_kjvv.readlines() ; fp_kjvv.close()
@@ -340,6 +341,13 @@ for ntBook in nt_index :
     # ------------------------------------------
     # check total chapter number in this segment
     # ------------------------------------------
+    # -------
+    # ccv
+    # -------
+    sentenceNum = len( content_ccvv )
+    print("sentence no. in ccvv "+words[3]+" is "+str(sentenceNum))
+    chapterNum  = int( content_ccvv[ sentenceNum - 1 ].split(".")[0] )
+    print("ccvv "+words[3]+" contains "+str(chapterNum)+" chapters")
     # -------
     # cuv1
     # -------
@@ -413,7 +421,8 @@ for ntBook in nt_index :
     # -----------------------------
     # -----------------------------
     colorIntensity        = 100
-    colorArr              =['CUV1LightRed'   , \
+    colorArr              =['CCVVLightBlue'  , \
+                            'CUV1LightRed'   , \
                             'LZZVLightGray'  , \
                             'KJVVLightGreen' , \
                             'CUV2LightYellow', \
