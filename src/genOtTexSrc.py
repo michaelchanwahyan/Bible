@@ -174,7 +174,7 @@ for otBook in ot_index :
                 # obtain chapter_verse string
                 ch_vsStr = content_cuv1[sentenceIdx].replace("\n","").split(" ",1)[0].replace(".",":")
                 # <<<< when a new version is added, argument in "multirow" requires adjustment >>>>
-                bibleStr = "\\multirow{10}{*}{\\rotatebox[origin=c]{90}{\\hfill "+words[1]+" "+words[3]+" $"+bibleStr[0]+"$ \\hfill}}"
+                bibleStr = "\\multirow{10}{*}{\\rotatebox[origin=c]{90}{\\hfill "+words[1]+" "+words[3]+" $"+ch_vsStr+"$ \\hfill}}"
                 fp.write( bibleStr )
                 # ---------------------------------------------------
                 # add the content of cuv1 to 1st row
@@ -184,7 +184,7 @@ for otBook in ot_index :
                 bibleStr = bibleStr[1]
                 bibleStr= " & " \
                         +"\\cellcolor{"+colorArr[0]+"!"+str(colorIntensity)+"}"+"\\scriptsize{和合本}"+" & " \
-                        +"\\cellcolor{"+colorArr[0]+"!"+str(colorIntensity)+"}"+bibleStr[1]+" \\\\\n"
+                        +"\\cellcolor{"+colorArr[0]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n"
                 fp.write( bibleStr )
                 # ----------------------------------------------------
                 # add the content of lzzv to 2nd row
