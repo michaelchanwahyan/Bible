@@ -192,8 +192,6 @@ for ntBook in nt_index :
                 # ---------------------------------------------------
                 bibleStr = content_ccvv[sentenceIdx].replace("\n","")
                 bibleStr = bibleStr.split(" ",1)
-                if len(bibleStr) == 1:
-                    print(bibleStr)
                 bibleStr = bibleStr[1]
                 bibleStr = " & " \
                         +"\\cellcolor{"+colorArr[0]+"!"+str(colorIntensity)+"}"+"\\scriptsize{新漢語譯本}"+" & " \
