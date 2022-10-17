@@ -171,7 +171,7 @@ for otBook in ot_index :
                 # obtain chapter_verse string
                 ch_vsStr = content_cuv1[sentenceIdx].replace("\n","").split(" ",1)[0].replace(".",":")
                 # <<<< when a new version is added, argument in "multirow" requires adjustment >>>>
-                bibleStr = "\\multirow{10}{*}{\\rotatebox[origin=c]{90}{\\hfill "+words[1]+" "+words[3]+" $"+ch_vsStr+"$ \\hfill}}"
+                bibleStr = "\\multirow{10}{*}{\\rotatebox[origin=c]{90}{\\hfill "+words[1]+" "+words[3]+" $"+ch_vsStr+"$ \\hfill}}\n"
                 fp.write( bibleStr )
                 # ---------------------------------------------------
                 # add the content of cuv1 to 1st row
@@ -200,7 +200,7 @@ for otBook in ot_index :
                 bibleStr = bibleStr.split(" ",1)
                 bibleStr = bibleStr[1]
                 bibleStr = " & " \
-                        +"\\cellcolor{"+colorArr[2]+"!"+str(colorIntensity)+"}"+"\\scriptsize{KJV}"+" & " \
+                        +"\\cellcolor{"+colorArr[2]+"!"+str(colorIntensity)+"}"+"\\scriptsize{King James}"+" & " \
                         +"\\cellcolor{"+colorArr[2]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n"
                 fp.write( bibleStr ) ;
                 # ----------------------------------------------------
@@ -230,7 +230,7 @@ for otBook in ot_index :
                 bibleStr = bibleStr.split(" ",1)
                 bibleStr = bibleStr[1]
                 bibleStr = " & " \
-                        +"\\cellcolor{"+colorArr[5]+"!"+str(colorIntensity)+"}"+"\\scriptsize{NRSV}"+" & " \
+                        +"\\cellcolor{"+colorArr[5]+"!"+str(colorIntensity)+"}"+"\\scriptsize{New Rev St}"+" & " \
                         +"\\cellcolor{"+colorArr[5]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n"
                 fp.write( bibleStr )
                 # ---------------------------------------------------
@@ -461,7 +461,7 @@ for ntBook in nt_index :
                 # obtain chapter_verse string
                 ch_vsStr = content_cuv1[sentenceIdx].replace("\n","").split(" ",1)[0].replace(".",":")
                 # <<<< when a new version is added, argument in "multirow" requires adjustment >>>>
-                bibleStr = "\\multirow{11}{*}{\\rotatebox[origin=c]{90}{\\hfill "+words[1]+" "+words[3]+" $"+ch_vsStr+"$ \\hfill}}"
+                bibleStr = "\\multirow{11}{*}{\\rotatebox[origin=c]{90}{\\hfill "+words[1]+" "+words[3]+" $"+ch_vsStr+"$ \\hfill}}\n"
                 fp.write( bibleStr )
                 # ---------------------------------------------------
                 # add the content of ccvv to 1st row
