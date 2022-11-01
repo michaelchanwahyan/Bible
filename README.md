@@ -29,6 +29,7 @@ and finally the output file "bible.pdf" should be ready.
 original Hebrew and Greek from openly accessible original texts)
 
 ## Current Bible Version Supported
+- CCV  (新漢語譯本)
 - CUV  (Chinese Union Version 和合本)
 - LZZ  (Lu Zhen Zhong Bible Translation 呂振中譯本)
 - KJV  (King James Version)
