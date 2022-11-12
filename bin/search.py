@@ -22,18 +22,23 @@ booklist = ["Gen","Exo","Lev","Num","Deu",
 #if bibleversion == 'sblgnt':
 #    booklist = booklist[39:]
 keywordNum = len(ls)
-bvlist = ['cuv1', 'cuv2', 'cnv', 'lzz', 'tcv19', 'wenl', 'nrsv', 'kjv']
+bvlist = ['ccv', 'cuv1', 'cuv2', 'cnv', 'lzz', 'tcv19', 'wenl', 'nrsv', 'kjv']
 # bvlist := bible version list
 for book in booklist:
     lines = {}
     for bv in bvlist:
         fullbookpath = "../src/bible_src/" + bv + "/" + book + ".txt"
+        if not os.path.exists(fullbookpath):
+            continue
         with open(fullbookpath, "r") as fp:
             lines[bv] = fp.readlines()
         fp.close()
     lineNum = len(lines['cuv1']) # assume all versions have the same no of line
     for lineIdx in range(lineNum):
         for bv in bvlist:
+            fullbookpath = "../src/bible_src/" + bv + "/" + book + ".txt"
+            if not os.path.exists(fullbookpath):
+                continue
             lines[bv][lineIdx] = lines[bv][lineIdx].strip()
             if all(keyword in lines[bv][lineIdx] for keyword in ls):
                 print(book + "  " + bv + "  " + lines[bv][lineIdx])
