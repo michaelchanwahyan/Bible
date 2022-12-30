@@ -1,0 +1,3 @@
+[submodule "src/bible_src"]
+	path = src/bible_src
+	url = https://github.com/michaelchanwahyan/bible_src
