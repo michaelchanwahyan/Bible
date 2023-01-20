@@ -151,7 +151,7 @@ for otBook in ot_index :
                             'NRSVLightBlue'  , \
                             'WENLLightPurple', \
                             'TCV19PaleGreen' , \
-                            'CCBVRichBlue'   , \
+                            'CCBVRichYellow' , \
                             'MSGVLightWhite' , \
                             'JPS1917LightYellow']
     for chapterIdx in range(1,chapterNum+1,1) :
@@ -223,7 +223,7 @@ for otBook in ot_index :
                 bibleStr = bibleStr.split(" ",1)
                 bibleStr = bibleStr[1]
                 bibleStr = " & " \
-                        +"\\cellcolor{"+colorArr[3]+"!"+str(colorIntensity)+"}"+"\\scriptsize{和合修定}"+" & " \
+                        +"\\cellcolor{"+colorArr[3]+"!"+str(colorIntensity)+"}"+"\\scriptsize{和合本修訂}"+" & " \
                         +"\\cellcolor{"+colorArr[3]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n"
                 fp.write( bibleStr )
                 # ----------------------------------------------------
