@@ -5,6 +5,13 @@ It intends to show the text of each version in a line-by-line manner for, maybe 
 ## Getting Started
 objective: compile bible.pdf
 
+```bash
+git clone --depth 1 https://github.com/michaelchanwahyan/Bible.git
+cd Bible
+git submodule init
+git submodule update --depth 1
+```
+
 ### Prerequisites and Remarks
 - Operating System                : Unix-based
 - Software Library                : LaTeX (OSX: MacTex; others: tex-live)
@@ -15,7 +22,7 @@ objective: compile bible.pdf
 
 ## Usage
 
-```
+```bash
 python3 genBibleTexSrc.py
 /bin/sh buildBibleTex.sh
 ```
