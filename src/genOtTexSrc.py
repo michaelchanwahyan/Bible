@@ -153,7 +153,7 @@ for otBook in ot_index :
                             'TCV19PaleGreen' , \
                             'CCBVRichYellow' , \
                             'MSGVLightWhite' , \
-                            'JPS1917LightYellow']
+                            'JPS1917PaleRed']
     for chapterIdx in range(1,chapterNum+1,1) :
         # <<<< when a new version is added, no. of "c" in tabular requires adjustment >>>>
         bibleStr = "\section{"+words[0]+" "+words[2]+" "+str(chapterIdx)+"}" \
