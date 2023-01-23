@@ -181,7 +181,7 @@ for otBook in ot_index :
                 # obtain chapter_verse string
                 ch_vsStr = content_cuv1[sentenceIdx].replace("\n","").split(" ",1)[0].replace(".",":")
                 # <<<< when a new version is added, argument in "multirow" requires adjustment >>>>
-                bibleStr = "\\multirow{10}{*}{\\rotatebox[origin=c]{90}{\\hfill "+words[1]+" "+words[3]+" $"+ch_vsStr+"$ \\hfill}}\n"
+                bibleStr = "\\multirow{11}{*}{\\rotatebox[origin=c]{90}{\\hfill "+words[1]+" "+words[3]+" $"+ch_vsStr+"$ \\hfill}}\n"
                 fp.write( bibleStr )
                 # ---------------------------------------------------
                 # add the content of cuv1 to 1st row
@@ -492,7 +492,7 @@ for ntBook in nt_index :
                 # obtain chapter_verse string
                 ch_vsStr = content_cuv1[sentenceIdx].replace("\n","").split(" ",1)[0].replace(".",":")
                 # <<<< when a new version is added, argument in "multirow" requires adjustment >>>>
-                bibleStr = "\\multirow{11}{*}{\\rotatebox[origin=c]{90}{\\hfill "+words[1]+" "+words[3]+" $"+ch_vsStr+"$ \\hfill}}\n"
+                bibleStr = "\\multirow{12}{*}{\\rotatebox[origin=c]{90}{\\hfill "+words[1]+" "+words[3]+" $"+ch_vsStr+"$ \\hfill}}\n"
                 fp.write( bibleStr )
                 # ---------------------------------------------------
                 # add the content of ccvv to 1st row
