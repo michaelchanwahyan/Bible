@@ -304,7 +304,7 @@ for otBook in ot_index :
                                        .replace("{S}","\{ S \}")
                 bibleStr = "{\\sblgoodhebrew " + bibleStr_hebrew + " } " + bibleStr_english
                 bibleStr = " & " \
-                        +"\\cellcolor{"+colorArr[10]+"!"+str(colorIntensity)+"}"+"\\scriptsize{\\makecell{Masoretic \\\\ JPSV1917}}"+" & " \
+                        +"\\cellcolor{"+colorArr[10]+"!"+str(colorIntensity)+"}"+"\\scriptsize{JPSV1917}"+" & " \
                         +"\\cellcolor{"+colorArr[10]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n"
                 fp.write( bibleStr )
                 # ---------------------------------------------------
