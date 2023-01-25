@@ -1,0 +1,6 @@
+bible.pdf filter=lfs diff=lfs merge=lfs -text
+bible_small.pdf filter=lfs diff=lfs merge=lfs -text
+nt.pdf filter=lfs diff=lfs merge=lfs -text
+nt_small.pdf filter=lfs diff=lfs merge=lfs -text
+ot.pdf filter=lfs diff=lfs merge=lfs -text
+ot_small.pdf filter=lfs diff=lfs merge=lfs -text
