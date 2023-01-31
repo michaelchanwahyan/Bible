@@ -49,6 +49,7 @@ original Hebrew and Greek from openly accessible original texts)
 - SBLGNT (Society of Biblical Literature Greek New Testament)
 - JPSV1917 (Tanakh 1917 edition according to the Masoretic Text, Jewish Publication Society)
 - TCV2019 (Today's Chinese Version 2019 現代中文譯本2019)
+- CCB (Chinese Contemporary Bible 當代譯本修訂版)
 
 ## Notice:
 for Masoretic typesetting, assistance font shall be downloaded and installed from SBL (Society of Biblical Literature), namely the font file :
@@ -59,5 +60,5 @@ from https://www.sbl-site.org/educational/BiblicalFonts_SBLBibLit.aspx
 
 
 ## Editor
-contact person : Michael via chchan@link.cuhk.edu.hk
+contact person : Michael via michaelchan_wahyan@yahoo.com.hk
 
