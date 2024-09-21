@@ -45,6 +45,7 @@ for otBook in ot_index :
     fp_kjvv = open( "bible_src/kjv/"     + words[3] + ".txt" ) ; content_kjvv = fp_kjvv.readlines() ; fp_kjvv.close()
     fp_cuv2 = open( "bible_src/cuv2/"    + words[3] + ".txt" ) ; content_cuv2 = fp_cuv2.readlines() ; fp_cuv2.close()
     fp_cnvv = open( "bible_src/cnv/"     + words[3] + ".txt" ) ; content_cnvv = fp_cnvv.readlines() ; fp_cnvv.close()
+    fp_wwbv = open( "bible_src/wwbv/"    + words[3] + ".txt" ) ; content_wwbv = fp_wwbv.readlines() ; fp_wwbv.close()
     fp_nrsv = open( "bible_src/nrsv/"    + words[3] + ".txt" ) ; content_nrsv = fp_nrsv.readlines() ; fp_nrsv.close()
     fp_wenl = open( "bible_src/wenl/"    + words[3] + ".txt" ) ; content_wenl = fp_wenl.readlines() ; fp_wenl.close()
     fp_tcv19= open( "bible_src/tcv19/"   + words[3] + ".txt" ) ; content_tcv19= fp_tcv19.readlines(); fp_tcv19.close()
@@ -99,6 +100,13 @@ for otBook in ot_index :
     chapterNum  = int( content_cnvv[ sentenceNum - 1 ].split(".")[0] )
     print("cnvv "+words[3]+" contains "+str(chapterNum)+" chapters")
     # -------
+    # wwbv
+    # -------
+    sentenceNum = len( content_wwbv )
+    print("sentence no. in wwbv "+words[3]+" is "+str(sentenceNum))
+    chapterNum  = int( content_wwbv[ sentenceNum - 1 ].split(".")[0] )
+    print("wwbv "+words[3]+" contains "+str(chapterNum)+" chapters")
+    # -------
     # nrsv
     # -------
     sentenceNum = len( content_nrsv )
@@ -148,6 +156,7 @@ for otBook in ot_index :
                             'KJVVLightGreen' , \
                             'CUV2LightYellow', \
                             'CNVVLightBrown' , \
+                            'WWBVLightGreen' , \
                             'NRSVLightBlue'  , \
                             'WENLLightPurple', \
                             'TCV19PaleGreen' , \
@@ -157,18 +166,19 @@ for otBook in ot_index :
     for chapterIdx in range(1,chapterNum+1,1) :
         # <<<< when a new version is added, no. of "c" in tabular requires adjustment >>>>
         bibleStr = "\section{"+words[0]+" "+words[2]+" "+str(chapterIdx)+"}" \
-                   +" \hyperlink{toc}{[返主目錄]} \hyperref[subsec:book"+str(xbkCnt)+"]{[返卷目錄]}~\\begin{tabular}{ccccccccccc}\\cellcolor{" \
+                   +" \hyperlink{toc}{[返主目錄]} \hyperref[subsec:book"+str(xbkCnt)+"]{[返卷目錄]}~\\begin{tabular}{cccccccccccc}\\cellcolor{" \
                    +colorArr[ 0]+"!"+str(colorIntensity)+"}{\\small CUV}&\\cellcolor{"     \
                    +colorArr[ 1]+"!"+str(colorIntensity)+"}{\\small LZZ}&\\cellcolor{"     \
                    +colorArr[ 2]+"!"+str(colorIntensity)+"}{\\small KJV}&\\cellcolor{"     \
                    +colorArr[ 3]+"!"+str(colorIntensity)+"}{\\small CUVR}&\\cellcolor{"    \
                    +colorArr[ 4]+"!"+str(colorIntensity)+"}{\\small CNV}&\\cellcolor{"     \
-                   +colorArr[ 5]+"!"+str(colorIntensity)+"}{\\small NRSV}&\\cellcolor{"    \
-                   +colorArr[ 6]+"!"+str(colorIntensity)+"}{\\small WLV}&\\cellcolor{"     \
-                   +colorArr[ 7]+"!"+str(colorIntensity)+"}{\\small TCV2019}&\\cellcolor{" \
-                   +colorArr[ 8]+"!"+str(colorIntensity)+"}{\\small CCBV}&\\cellcolor{"    \
-                   +colorArr[ 9]+"!"+str(colorIntensity)+"}{\\small MSGV}&\\cellcolor{"    \
-                   +colorArr[10]+"!"+str(colorIntensity)+"}{\\small JPSV1917}"             \
+                   +colorArr[ 5]+"!"+str(colorIntensity)+"}{\\small WWBV}&\\cellcolor{"    \
+                   +colorArr[ 6]+"!"+str(colorIntensity)+"}{\\small NRSV}&\\cellcolor{"    \
+                   +colorArr[ 7]+"!"+str(colorIntensity)+"}{\\small WLV}&\\cellcolor{"     \
+                   +colorArr[ 8]+"!"+str(colorIntensity)+"}{\\small TCV2019}&\\cellcolor{" \
+                   +colorArr[ 9]+"!"+str(colorIntensity)+"}{\\small CCBV}&\\cellcolor{"    \
+                   +colorArr[10]+"!"+str(colorIntensity)+"}{\\small MSGV}&\\cellcolor{"    \
+                   +colorArr[11]+"!"+str(colorIntensity)+"}{\\small JPSV1917}"             \
                    +"\\end{tabular}"                                                       \
                    +"\\label{sec:"+str(xrefCnt)+"}"                                        \
                    +"\n"
@@ -237,17 +247,27 @@ for otBook in ot_index :
                         +"\\cellcolor{"+colorArr[4]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n"
                 fp.write( bibleStr )
                 # ----------------------------------------------------
-                # add the content of nrsv to 6th row
+                # add the content of wwbv to 6th row
+                # ----------------------------------------------------
+                bibleStr = content_wwbv[sentenceIdx].replace("\n","")
+                bibleStr = bibleStr.split(" ",1)
+                bibleStr = bibleStr[1]
+                bibleStr = " & " \
+                        +"\\cellcolor{"+colorArr[5]+"!"+str(colorIntensity)+"}"+"\\scriptsize{環球譯本}"+" & " \
+                        +"\\cellcolor{"+colorArr[5]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n"
+                fp.write( bibleStr )
+                # ----------------------------------------------------
+                # add the content of nrsv to 7th row
                 # ----------------------------------------------------
                 bibleStr = content_nrsv[sentenceIdx].replace("\n","")
                 bibleStr = bibleStr.split(" ",1)
                 bibleStr = bibleStr[1]
                 bibleStr = " & " \
-                        +"\\cellcolor{"+colorArr[5]+"!"+str(colorIntensity)+"}"+"\\scriptsize{New Rev St}"+" & " \
-                        +"\\cellcolor{"+colorArr[5]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n"
+                        +"\\cellcolor{"+colorArr[6]+"!"+str(colorIntensity)+"}"+"\\scriptsize{New Rev St}"+" & " \
+                        +"\\cellcolor{"+colorArr[6]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n"
                 fp.write( bibleStr )
                 # ---------------------------------------------------
-                # add the content of wenl to 7th row
+                # add the content of wenl to 8th row
                 # ---------------------------------------------------
                 bibleStr = content_wenl[sentenceIdx].replace("\n","")
                 bibleStr1 = []
@@ -255,41 +275,41 @@ for otBook in ot_index :
                     if ( not c.isdigit() ) and ( not c == "." ) :
                         bibleStr1.append(c)
                 bibleStr = " & " \
-                        +"\\cellcolor{"+colorArr[6]+"!"+str(colorIntensity)+"}"+"\\scriptsize{文理本}"+" & " \
-                        +"\\cellcolor{"+colorArr[6]+"!"+str(colorIntensity)+"}"+''.join(bibleStr1)+" \\\\\n"
+                        +"\\cellcolor{"+colorArr[7]+"!"+str(colorIntensity)+"}"+"\\scriptsize{文理本}"+" & " \
+                        +"\\cellcolor{"+colorArr[7]+"!"+str(colorIntensity)+"}"+''.join(bibleStr1)+" \\\\\n"
                 fp.write( bibleStr )
                 # ----------------------------------------------------
-                # add the content of tcv19 to 8th row
+                # add the content of tcv19 to 9th row
                 # ----------------------------------------------------
                 bibleStr = content_tcv19[sentenceIdx].replace("\n","")
                 bibleStr = bibleStr.split(" ",1)
                 bibleStr = bibleStr[1]
                 bibleStr = " & " \
-                        +"\\cellcolor{"+colorArr[7]+"!"+str(colorIntensity)+"}"+"\\scriptsize{現中2019}"+" & " \
-                        +"\\cellcolor{"+colorArr[7]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n"
+                        +"\\cellcolor{"+colorArr[8]+"!"+str(colorIntensity)+"}"+"\\scriptsize{現中2019}"+" & " \
+                        +"\\cellcolor{"+colorArr[8]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n"
                 fp.write( bibleStr )
                 # ----------------------------------------------------
-                # add the content of ccbv to 9th row
+                # add the content of ccbv to 10th row
                 # ----------------------------------------------------
                 bibleStr = content_ccbv[sentenceIdx].replace("\n","")
                 bibleStr = bibleStr.split(" ",1)
                 bibleStr = bibleStr[1]
                 bibleStr = " & " \
-                        +"\\cellcolor{"+colorArr[8]+"!"+str(colorIntensity)+"}"+"\\scriptsize{當代譯本修訂}"+" & " \
-                        +"\\cellcolor{"+colorArr[8]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n"
+                        +"\\cellcolor{"+colorArr[9]+"!"+str(colorIntensity)+"}"+"\\scriptsize{當代譯本修訂}"+" & " \
+                        +"\\cellcolor{"+colorArr[9]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n"
                 fp.write( bibleStr )
                 # ----------------------------------------------------
-                # add the content of msgv to 10th row
+                # add the content of msgv to 11th row
                 # ----------------------------------------------------
                 bibleStr = content_msgv[sentenceIdx].replace("\n","")
                 bibleStr = bibleStr.split(" ",1)
                 bibleStr = bibleStr[1]
                 bibleStr = " & " \
-                        +"\\cellcolor{"+colorArr[9]+"!"+str(colorIntensity)+"}"+"\\scriptsize{Message}"+" & " \
-                        +"\\cellcolor{"+colorArr[9]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n"
+                        +"\\cellcolor{"+colorArr[10]+"!"+str(colorIntensity)+"}"+"\\scriptsize{Message}"+" & " \
+                        +"\\cellcolor{"+colorArr[10]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n"
                 fp.write( bibleStr )
                 # ----------------------------------------------------
-                # add the content of jpsv1917 to 11th row
+                # add the content of jpsv1917 to 12th row
                 # ----------------------------------------------------
                 bibleStr = content_jpsv[sentenceIdx].replace("\n","")
                 bibleStr = bibleStr.split(" ",1)
@@ -307,8 +327,8 @@ for otBook in ot_index :
                                        .replace("{S}","\{ S \}")
                 bibleStr = "{\\sblgoodhebrew " + bibleStr_hebrew + " } " + bibleStr_english
                 bibleStr = " & " \
-                        +"\\cellcolor{"+colorArr[10]+"!"+str(colorIntensity)+"}"+"\\scriptsize{JPSV1917}"+" & " \
-                        +"\\cellcolor{"+colorArr[10]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n"
+                        +"\\cellcolor{"+colorArr[11]+"!"+str(colorIntensity)+"}"+"\\scriptsize{JPSV1917}"+" & " \
+                        +"\\cellcolor{"+colorArr[11]+"!"+str(colorIntensity)+"}"+bibleStr+" \\\\\n"
                 fp.write( bibleStr )
                 # ---------------------------------------------------
                 # end current sentence

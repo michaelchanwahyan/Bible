@@ -22,7 +22,7 @@ booklist = ["Gen","Exo","Lev","Num","Deu",
 #if bibleversion == 'sblgnt':
 #    booklist = booklist[39:]
 keywordNum = len(ls)
-bvlist = ['ccv', 'cuv1', 'cuv2', 'cnv', 'lzz', 'tcv19', 'wenl', 'nrsv', 'kjv']
+bvlist = ['ccv', 'cuv1', 'cuv2', 'cnv', 'wwbv', 'lzz', 'tcv19', 'wenl', 'nrsv', 'kjv', 'jps1917']
 # bvlist := bible version list
 for book in booklist:
     lines = {}

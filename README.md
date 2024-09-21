@@ -3,7 +3,7 @@ This is a project working on Bible that includes its several common versions in 
 It intends to show the text of each version in a line-by-line manner for, maybe not better reading but, better comparison.
 
 ## Getting Started
-objective: compile bible.pdf
+objective: compile bible.pdf, ot.pdf, nt.pdf
 
 ```bash
 git clone --depth 1 https://github.com/michaelchanwahyan/Bible.git
@@ -12,7 +12,7 @@ git submodule init
 git submodule update --depth 1
 ```
 
-### Prerequisites and Remarks
+### Prerequisites and Remarks for Build
 - Operating System                : Unix-based
 - Software Library                : LaTeX (OSX: MacTex; others: tex-live)
 - special LaTeX packages required : xeCJK, BiauKai (for Chinese Character typesettings)
@@ -20,13 +20,19 @@ git submodule update --depth 1
 - LaTeX build option              : syntax=1
 
 
-## Usage
+## Build Usage
 
 ```bash
 python3 genBibleTexSrc.py
-/bin/sh buildBibleTex.sh
+/bin/bash buildBibleTex.sh
+
+python3 genOtTexSrc.py
+/bin/bash buildOtTex.sh
+
+python3 genNtTexSrc.py
+/bin/bash buildNtTex.sh
 ```
-and finally the output file "bible.pdf" should be ready.
+and finally the output file "bible.pdf", "ot.pdf" and "nt.pdf" should be ready.
 
 // remark : bible_small.pdf is small-characters version of
 
@@ -42,6 +48,7 @@ original Hebrew and Greek from openly accessible original texts)
 - KJV  (King James Version)
 - CUVR (Chinese Union Version Revised 和合本修定版)
 - CNV  (Chinese New Version 新譯本)
+- WWBV (Worldwide Bible Version 環球聖經譯本)
 - NRSV (New Revised Standard Version)
 - WL   (Wenli Version 文理本)
 - MSGV (The Message Bible by Eugene Peterson)
